@@ -1,0 +1,1 @@
+INSERT INTO BOOK(TITLE, GENRE, CREATED_ON, LAST_UPDATE_ON) VALUES ('The Bestseller', 'Romance', current_timestamp(), current_timestamp());
