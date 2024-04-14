@@ -1,11 +1,24 @@
+#Multi-stage build
+
+#Stage 1: initialize build and set base image for first stage
 FROM maven:3.8.8-amazoncorretto-17 AS build
 
-COPY . /opt/app/
 WORKDIR /opt/app/
 
-RUN mvn package -DskipTests
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
+COPY ./src ./src
+
+# compile the source code and package it in a jar file
+RUN mvn clean install -DskipTests
+
+#Stage 2: set base image for second stage
 FROM eclipse-temurin:17-alpine
+
+# set deployment directory
+WORKDIR /opt/app/
+
 COPY --from=build /opt/app/target/bookCatalog-0.0.1-SNAPSHOT.jar /app.jar
 
 EXPOSE 8080
