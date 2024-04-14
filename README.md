@@ -158,6 +158,6 @@ Working with smaller Docker images brings several benefits:
 * performance: containers start-up is faster
 * security: images that contain fewer artifacts are more secure
 
-| ![spring-boot-docker-images.png](..%2F..%2FUsers%2FMarco%2FDesktop%2Fmodules_project%2Fspring-boot-docker-images.png) | 
+| ![spring-boot-docker-images.png](src%2Fmain%2Fresources%2Fimages%2Fspring-boot-docker-images.png) | 
 |:---------------------------------------------------------------------------------------------------------------------:| 
 |                     *The comparison between the two Docker images obtained with our Dockerfiles*                      |
